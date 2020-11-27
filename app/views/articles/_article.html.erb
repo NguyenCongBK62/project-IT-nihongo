@@ -1,0 +1,18 @@
+<li id="article-<%= article.id %>">
+    <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar , style:'width: 50px; height: 50px;'%>
+    <% end %>
+    <span class="user"><%= article.user.email %></span>
+    <span class="content">
+        <%= article.content %>
+        <% if article.images.attached? %>
+        <%= image_tag article.images , style:'width: 300px; height: 300px;'%>
+        <% end %>
+    </span>
+    <span class="timestamp">
+    Posted <%= time_ago_in_words(article.created_at) %> ago.
+    <% if current_user.id == article.user.id %>
+        <%= link_to "delete", article, method: :delete,data: { confirm: "You sure?" } %>
+    <% end %>
+    </span>
+</li>

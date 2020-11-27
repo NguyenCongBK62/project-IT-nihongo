@@ -87,6 +87,9 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-bootstrap-views (1.1.0)
+    devise_masquerade (1.2.0)
+      devise (>= 4.7.0)
+      railties (>= 5.2.0)
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -230,6 +233,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-bootstrap-views (~> 1.0)
+  devise_masquerade
   font-awesome-sass
   jbuilder (~> 2.5)
   jquery-rails

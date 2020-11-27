@@ -1,0 +1,9 @@
+<%= form_for(@article) do |f| %>
+  <div class="field">
+  <%= f.text_area :content, placeholder: "Compose new article..." %>
+  </div>
+  <%= f.submit "Post" %>
+  <span class="image">
+  <%= f.file_field :images, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
+<% end %>
