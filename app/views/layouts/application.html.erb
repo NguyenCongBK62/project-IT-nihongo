@@ -16,17 +16,20 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Hidden brand</a>
+        <%= link_to "home" , root_path, :class => "navbar-brand" %>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <% if user_signed_in? %>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <%= link_to "logout" , destroy_user_session_path, method: :delete, :class => "nav-link" %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+          <%  else %>
+            <li class="nav-item active">
+              <%= link_to "login" , new_user_session_path, :class => "nav-link" %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to "sign up" , new_user_registration_path, :class => "nav-link" %>
+            </li>
+          <% end %>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
