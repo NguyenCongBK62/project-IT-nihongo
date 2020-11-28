@@ -1,15 +1,21 @@
 <% if user_signed_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="article_form">
-        <%= render 'articles/form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Articles Feed</h3>
-      <%= render 'articles/feed' %>
+  <div class="new_feed">
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="user_info">
+          <%= render 'users/user_info' %>
+        </section>
+        <section class="article_form">
+          <%= render 'articles/form' %>
+        </section>
+      </aside>
+      <div class="col-md-8">
+        <h3>Articles Feed</h3>
+        <%= render 'articles/feed' %>
+      </div>
     </div>
   </div>
+  
 <% else %>
   <div class="jumbotron">
     <h1 class="display-4">WELCOME TO MY BLOG!</h1>

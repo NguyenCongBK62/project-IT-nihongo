@@ -1,12 +1,12 @@
 <li id="article-<%= article.id %>">
     <% if current_user.avatar.attached? %>
-        <%= image_tag current_user.avatar , style:'width: 50px; height: 50px;'%>
+        <%= image_tag current_user.avatar , style:'width: 30px; height: 30px;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;'%>
     <% end %>
     <span class="user"><%= article.user.email %></span>
     <span class="content">
         <%= article.content %>
         <% if article.images.attached? %>
-        <%= image_tag article.images , style:'width: 300px; height: 300px;'%>
+        <%= image_tag article.images , style:'width: 500px; height: 300px;'%>
         <% end %>
     </span>
     <span class="timestamp">
