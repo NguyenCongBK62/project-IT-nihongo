@@ -1,0 +1,11 @@
+<div class="user_list">
+    <h1>All users</h1>
+    <div class="ul_list_li">
+        <ul class="users">
+            <% @users.each do |user| %>
+              <%= render user %>
+            <% end %>
+        </ul>
+    </div>
+    
+</div>
