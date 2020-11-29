@@ -1,0 +1,10 @@
+<ul class="users nav">
+            <% @users.each do |user| %>
+             <li class="nav-item"> <%= render user %></li>
+               <li class="nav-item">
+                   <%= form_tag follow_user_path, method: :post do %>
+                   <%= hidden_field_tag :follow_id, user.id %>
+                   <%= submit_tag "Follow", class: "btn btn-primary" ,data: { confirm: "You follow?" }%>
+                   <% end %>
+            <% end %>
+ </ul>
