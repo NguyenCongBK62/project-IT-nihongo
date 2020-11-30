@@ -5,9 +5,16 @@
     <span class="user"><%= article.user.email %></span>
     <span class="content">
         <%= article.content %>
-        <% if article.images.attached? %>
-        <%= image_tag article.images , style:'width: 500px; height: 300px;'%>
+        <div class="scroller">
+            <% if article.images.attached? %>
+            <% article.images.each do |image| %>
+                <div>
+                    <%= image_tag image, style:'width: 640px; height: 400px;' %>
+                </div>
+            <% end %>
         <% end %>
+        </div>
+        
     </span>
     <span class="timestamp">
     Posted <%= time_ago_in_words(article.created_at) %> ago.

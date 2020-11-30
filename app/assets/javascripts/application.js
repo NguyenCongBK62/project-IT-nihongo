@@ -17,3 +17,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery.slick
+
+document.addEventListener("turbolinks:load", function() {
+  $('.scroller').slick()
+})

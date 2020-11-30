@@ -4,6 +4,6 @@
   </div>
   <%= f.submit "Post", class: "btn btn-primary", style: "width: 100%;" %>
   <span class="image">
-  <%= f.file_field :images, accept: "image/jpeg,image/gif,image/png" %>
+  <%= f.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %>
   </span>
 <% end %>

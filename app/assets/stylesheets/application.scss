@@ -3,6 +3,8 @@
 @import"login_form";
 @import"articles";
 @import"users";
+@import 'slick';
+@import 'slick-theme';
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -25,3 +27,22 @@ body{
     background: url(back.jpg);
     background-size: cover;
 }
+.scroller {
+  div {
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+.slick-prev::before, .slick-next::before {
+  color: #000;
+}
+
+.slick-next {
+  right: 40px;
+}
+
+.slick-prev {
+  left: -40px;
+}
+

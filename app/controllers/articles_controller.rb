@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = current_user.articles.new(article_params)
+    @article.images.attach(params[:article][:images])
     if @article.save
       flash[:success] = "article created!"
       redirect_to root_url
