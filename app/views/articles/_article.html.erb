@@ -28,4 +28,22 @@
     <% else %>
         <%= link_to 'Like', likes_path(:like => {:user_id =>current_user.id, :article_id => article.id}), method: :post %>
     <% end %>
+    <br>
+    
+    <%= render 'comments/list', comments: article.comments %>
+
+  
+    
+    
+    
+    
+    <div id="div_id_username" class="form-group required">
+        <%= form_for(current_user.comments.new, remote: true) do |f| %>
+             <div class="controls form-group d-flex w-100 ">
+                 <%= f.text_area :title, class: "input-md  textinput textInput form-control",  placeholder: "Write your comments...", style: "width: 100%;" %>
+                 <%= f.text_field :article_id, type: "hidden", value: article.id %>
+                 <%= f.submit "Post", type: "submit", class: "btn btn-info border-radius-0  m-0 w-25" %>
+            </div>
+        <% end %>
+    </div>
 </li>

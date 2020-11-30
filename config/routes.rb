@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :likes 
   resources :articles
+  resources :comments
   devise_for :users
   get 'users/:id' => 'users#show', as: :user
   get "users" , to: "users#index"
