@@ -43,7 +43,7 @@ class LikesController < ApplicationController
   def update
     respond_to do |format|
       if @like.update(like_params)
-        format.html { redirect_to @like, notice: 'Like was successfully updated.' }
+        format.html { redirect_to :root, notice: 'Like was successfully updated.' }
         format.json { render :show, status: :ok, location: @like }
       else
         format.html { render :edit }
