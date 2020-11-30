@@ -5,7 +5,10 @@
         <h3 class="login-heading mb-4">Welcome !</h3>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-group'}) do |f| %>
             <%= render "users/shared/error_messages", resource: resource %>
-          
+            <div class="form-label-group">
+              <%= f.label :name, :for => "inputEmail" %>
+              <%= f.text_field :name, :id => "inputEmail", :class => "form-control", :placeholder => "User Name" %>
+            </div>
             <div class="form-label-group">
               <%= f.label :email, :for => "inputEmail" %>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", :id => "inputEmail", :class => "form-control", :placeholder => "Email address" %>
