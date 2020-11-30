@@ -7,13 +7,11 @@
                    <% if user.id == follower.id %>
                      <% @count = 1 %>
                      <li class="nav-item">
-                    <%= link_to "Un follow", user, method: :delete,class: "btn btn-primary", data: { confirm: "You sure?" } %>
+                    <%= link_to "Un follow",user, method: :delete,class: "btn btn-primary", data: { confirm: "You sure?" } %>
                      <% end %>
-                      
                      
                     <% end %>
 
-                  
                   <% if @count == 0 %>
                    <li class="nav-item">
                    <%= form_tag  follow_user_path, method: :post do %>
@@ -23,8 +21,3 @@
                     <% end %>
             <% end %>
  </ul>
- 
- 
-  
- 
- 
