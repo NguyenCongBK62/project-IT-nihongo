@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :articles, dependent: :destroy
   has_one_attached :avatar
+  has_many :followers, dependent: :destroy
 
   def feed
     part_of_feed = "articles.user_id = :id"
