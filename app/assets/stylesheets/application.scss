@@ -21,4 +21,7 @@
  *= require_self
  *= require pure_css_reset
  */
- 
+body{
+    background: url(back.jpg);
+    background-size: cover;
+}
