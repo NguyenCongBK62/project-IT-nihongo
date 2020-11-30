@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_180424) do
     t.index [nil, nil], name: "index_followers_on_follower_and_following", unique: true
     t.index [nil], name: "index_followers_on_follower"
     t.index [nil], name: "index_followers_on_following"
+<<<<<<< HEAD
   end
 
   create_table "likes", force: :cascade do |t|
@@ -57,6 +58,8 @@ ActiveRecord::Schema.define(version: 2020_11_29_180424) do
     t.integer "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+>>>>>>> add like
   end
 
   create_table "users", force: :cascade do |t|
